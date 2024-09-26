@@ -1,0 +1,14 @@
+name: Containerized Actions
+on:
+    push:
+        branches:
+            - main
+jobs:
+  composite-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run composite action
+        uses: ./.github/actions/composite-action
+        with:
+          name: 'GitHub Actions Workshop'
