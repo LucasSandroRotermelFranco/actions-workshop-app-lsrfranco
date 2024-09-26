@@ -1,0 +1,14 @@
+name: Containerized Actions
+on:
+    push:
+        branches:
+            - main
+jobs:
+  containerized-action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run containerized action
+        uses: ./.github/actions/containerized-action
+        with:
+          name: 'GitHub Actions Workshop'
